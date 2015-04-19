@@ -14,12 +14,14 @@
 			]
 
 			var App = React.createClass({
-			render: function(){
-				var SportItems = this.props.Sports.map(function(item,index){
-					return (<SportItem name={item.name} icon={item.icon}>)
-				});
+				render: function(){
 
-				return(
+					var SportItems = this.props.sports.map(function(item,index)
+					{
+						return (<SportItem name={item.name} icon={item.icon}>)
+					});
+
+					return(
 						<div>
 
 							<div className="upper_header">
@@ -27,8 +29,7 @@
 							</div>
 							<SportItems />
 						</div>
-						)
-
+					)
 				}
 			});
 
