@@ -8,7 +8,7 @@ https://docs.google.com/document/d/15mlhsizDCjFUrfYam_xLWbJ-3qsxkkVMkr1wluQ--fE/
 	color= blue;
 }
 
-.nav {
+nav {
 	position: relative;
 	text-align: left;
 	  
@@ -30,18 +30,24 @@ https://docs.google.com/document/d/15mlhsizDCjFUrfYam_xLWbJ-3qsxkkVMkr1wluQ--fE/
 	width: 100px;
 	min-width: 50px;
 	min-height: 50px;
+	border: 1px solid black;
 
 }
 
 .info_screen {
 	h1 {
+		text-align: left;
 
 	}
-	
+	img {
+		
+		
+	}
+
 
 }
 
 .active_tab {
-	
+
 
 }

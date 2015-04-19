@@ -8,18 +8,29 @@
 		<script src="http://fb.me/JSXTransformer-0.13.2.js"></script>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<script type="text/jsx">
+
+			var Sports = [
+				{name:"winter", icon:""}
+			]
+
 			var App = React.createClass({
-	
-			render: function(){
-				return(
+				render: function(){
+
+					var SportItems = this.props.sports.map(function(item,index)
+					{
+						return (<SportItem name={item.name} icon={item.icon}>)
+					});
+
+					return(
 						<div>
+
 							<div className="upper_header">
 								<h1>Екстремни спортове</h1>
 							</div>
 
 							<nav>
 								<ul>
-									<li id="1">Сноуборд</li>
+									<li>Сноуборд</li>
 									<li>Рипстик</li>
 									<li>Парапланеризъм</li>
 									<li>Скачане с бънджи</li>
@@ -32,9 +43,11 @@
 								</ul>
 							</nav>
 
-						</div>
-						)
 
+							<SportItems />
+
+						</div>
+					)
 				}
 			});
 
@@ -48,13 +61,11 @@
 					}
 			});
 
-			React.render(<App/>,document.body);
+			React.render(<App sports={Sports}/>,document.body);
 		</script>
 	</head>
 	
 	<body>
-		
-
 
 
 	</body>
