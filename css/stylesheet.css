@@ -8,6 +8,11 @@ https://docs.google.com/document/d/15mlhsizDCjFUrfYam_xLWbJ-3qsxkkVMkr1wluQ--fE/
 	color= blue;
 }
 
+* {
+	padding: 0px;
+	margin: 0px;
+}
+
 #content {
 	width:100%;
 	display: -webkit-flex;
@@ -17,22 +22,21 @@ https://docs.google.com/document/d/15mlhsizDCjFUrfYam_xLWbJ-3qsxkkVMkr1wluQ--fE/
 */
 }
 
-nav ul {
-
-	border: 1px solid red;
-	margin-left: -50px;
-	width: 200px;
+nav{
+	flex: 1;
 
 
 }
-nav ul li {
+
+nav > ul {
+
+	border: 1px solid red;
+	width: 100%;
+	padding: 0px;
+
+}
+nav > ul > li {
 	display: block;
-	flex: 1;
-	
-	
-	width: 200px;
-	min-width: 100px;
-	
 
 	text-align: center;
 	line-height: 50px;
