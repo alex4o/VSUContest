@@ -14,12 +14,22 @@
 		<style>
 			.example-enter {
 				opacity: 0.01;
-				transition: opacity .5s ease-in;
+				transition: opacity 2s ease-in;
 			}
 
 			.example-enter.example-enter-active {
 				opacity: 1;
 			}
+
+			.example-leave {
+				opacity: 1;
+				transition: opacity 2s ease-in;
+			}
+
+			.example-leave.example-leave-active {
+				opacity: 0.01;
+			}
+
 		</style>
 
 		<script type="text/jsx">
@@ -114,20 +124,32 @@
 				React.createClass({
 					render: function(){
 						return(
+					
 						<div>
-
-						</div>)
+						<h1>Sport</h1>
+							<div id="img_text">
+								<div id="images">
+								<img src="http://www.crackverbal.com/wp-content/uploads/2013/08/serial-test-take.jpg" />
+								<img src="http://www.crackverbal.com/wp-content/uploads/2013/08/serial-test-take.jpg" />
+								</div>
+								<p id="text">Парашутизмът, или скачане с парашут, е действието на излизане от самолет и връщането на земята с помощта на гравитация и парашут, който забавя скоростта на спускане в заключителната част.
+	Може да включва определено време на свободно падане, през което парашутът не е разгърнат и падането на тялото постепенно се ускорява до скоростта на свободно падане.
+								</p>
+							</div>
+						</div>
+						)
 					}
 				}),
 			]
 
 			var App = React.createClass({
 				getInitialState: function(){
-					return ({page = 0})
+					return ({page: 0})
 				},
 
 				onClickMenu: function(index,event){
-					this.setState({page:index})
+					this.setState({page: index})
+					console.log(index)
 				},
 
 				render: function (){
@@ -140,7 +162,7 @@
 							<div id="content">
 							
 								<MenuPanel event={this.onClickMenu} sports={this.props.sports} />
-								<InfoScreenPanel panel={this.state.panel}/>
+								<InfoScreenPanel panel={this.state.page}/>
 							</div>
 
 						</div>
@@ -173,16 +195,9 @@
 					return(
 						
 						<div id="info_screen">
-							<h1>Sport</h1>
-							<div id="img_text">
-								<div id="images">
-								<img src="http://www.crackverbal.com/wp-content/uploads/2013/08/serial-test-take.jpg" />
-								<img src="http://www.crackverbal.com/wp-content/uploads/2013/08/serial-test-take.jpg" />
-								</div>
-								<p id="text">Парашутизмът, или скачане с парашут, е действието на излизане от самолет и връщането на земята с помощта на гравитация и парашут, който забавя скоростта на спускане в заключителната част.
-	Може да включва определено време на свободно падане, през което парашутът не е разгърнат и падането на тялото постепенно се ускорява до скоростта на свободно падане.
-								</p>
-							</div>
+						
+							{React.createElement(Page[this.props.panel])}
+						
 						</div>			
 						)
 				}

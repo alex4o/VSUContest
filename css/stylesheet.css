@@ -48,6 +48,7 @@ nav > ul > span > img {
 	position: relative;
 	display: block;
 	width: 100%;
+	height: 50px;
 	top:0px;
 }
 
@@ -58,8 +59,8 @@ nav > ul > span > li {
 	text-align: center;
 	line-height: 50px;
 	width: 100%;
+	background: rgba(0, 0, 0, 0.4);
 
-	background: gba(0, 0, 0, 0);
 	transition: background 0.2s ease-in-out;
 	
 	color: white;
@@ -71,8 +72,8 @@ nav > ul > span > li {
 	}
 
 	nav > ul > span > li:hover {
+	background: rgba(20, 20, 20, 0.15);
 		
-	background: rgba(0, 0, 0, 0.4);
 	}
 
 #info_screen {
