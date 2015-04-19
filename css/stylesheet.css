@@ -14,6 +14,8 @@ https://docs.google.com/document/d/15mlhsizDCjFUrfYam_xLWbJ-3qsxkkVMkr1wluQ--fE/
 	margin: 0px;
 }
 
+
+
 #content {
 	width:100%;
 	display: -webkit-flex;
@@ -36,20 +38,45 @@ nav > ul {
 	padding: 0px;
 
 }
-nav > ul > li {
-	display: block;
 
+nav > ul > span {
+	position: relative;
+	height: 50px;
+	display: block;
+}
+nav > ul > span > img {
+	position: relative;
+	display: block;
+	width: 100%;
+	top:0px;
+}
+
+nav > ul > span > li {
+	position: absolute;
+	display: block;
+	top: 0px;
 	text-align: center;
 	line-height: 50px;
+	width: 100%;
 
-	background: blue;
+	background: gba(0, 0, 0, 0);
+	transition: background 0.2s ease-in-out;
+	
 	color: white;
+	font-style: bold;
+	font-size: 20px;
+	font-family: sans-serif;
 
 	border: 1px solid black;
 	}
 
+	nav > ul > span > li:hover {
+		
+	background: rgba(0, 0, 0, 0.4);
+	}
+
 #info_screen {
-	border: 1px solid violet;
+	border: 0px solid violet;
 	display: block;
 	flex: 4;
 	text-align: center;
