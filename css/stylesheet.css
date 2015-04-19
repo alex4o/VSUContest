@@ -5,13 +5,18 @@ https://docs.google.com/document/d/15mlhsizDCjFUrfYam_xLWbJ-3qsxkkVMkr1wluQ--fE/
 .upper_header h1{
 	text-align: center;
 	font-family: 'Rockwell Extra Bold', Impact;
-	color= blue;
+	color: navy;
 	font-size: 100px;
 }
 
 * {
 	padding: 0px;
 	margin: 0px;
+
+}
+
+body {
+    background-image: url("../img/Plate.jpg");
 }
 
 
@@ -27,13 +32,15 @@ https://docs.google.com/document/d/15mlhsizDCjFUrfYam_xLWbJ-3qsxkkVMkr1wluQ--fE/
 
 nav{
 	flex: 1;
+	margin-left: 1em;
+	margin-right: 1em;
 
 
 }
 
 nav > ul {
 
-	border: 1px solid red;
+
 	width: 100%;
 	padding: 0px;
 
@@ -68,7 +75,7 @@ nav > ul > span > li {
 	font-size: 20px;
 	font-family: sans-serif;
 
-	border: 1px solid black;
+
 	}
 
 	nav > ul > span > li:hover {
@@ -77,10 +84,19 @@ nav > ul > span > li {
 	}
 
 #info_screen {
-	border: 0px solid violet;
+
 	display: block;
 	flex: 4;
 	text-align: center;
+	background-color: white;
+	margin-right: 1em;
+	background: -moz-radial-gradient(center, ellipse cover, rgba(153,218,255,1) 0%, rgba(151,216,249,1) 6%, rgba(136,186,163,1) 100%); /* ff3.6+ */
+background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, rgba(153,218,255,1)), color-stop(6%, rgba(151,216,249,1)), color-stop(100%, rgba(136,186,163,1))); /* safari4+,chrome */
+background:-webkit-radial-gradient(center, ellipse cover, rgba(153,218,255,1) 0%, rgba(151,216,249,1) 6%, rgba(136,186,163,1) 100%); /* safari5.1+,chrome10+ */
+background: -o-radial-gradient(center, ellipse cover, rgba(153,218,255,1) 0%, rgba(151,216,249,1) 6%, rgba(136,186,163,1) 100%); /* opera 11.10+ */
+background: -ms-radial-gradient(center, ellipse cover, rgba(153,218,255,1) 0%, rgba(151,216,249,1) 6%, rgba(136,186,163,1) 100%); /* ie10+ */
+background:radial-gradient(ellipse at center, rgba(153,218,255,1) 0%, rgba(151,216,249,1) 6%, rgba(136,186,163,1) 100%); /* w3c */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#99DAFF', endColorstr='#88BAA3',GradientType=0 );
 
 }
 
@@ -88,34 +104,35 @@ nav > ul > span > li {
 	margin: 0px;
 	width: 100%;
 	font-size: 100px;
-	border: 1px solid red;
+
 
 }
 
-#images {
+.images {
 	margin: 0px; 
 	display: inline;
 	flex:1;
-	border: 1px solid blue;
+
 
 }
 
-#images img{
+.images img{
 	 
-	height: 25%;
-	width: 50%;
+	height: 200px;
+	width: 200px;
 	margin:20px;
 }
 
-#text {
+.text {
 	display: block;
-	flex:2;
+	flex:3;
+	margin:2em;
 	text-align: justify;
 	font-size: 25px;
 	font-family: 
 }	
 
-#img_text {
+.img_text {
 	  display: -webkit-flex;
   display: flex;
 }

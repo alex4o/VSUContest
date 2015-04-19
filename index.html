@@ -37,21 +37,21 @@
 			
 			var Sports = [
 				{name:"Сноуборд", icon:"img/snow2.jpg"},
-				{name:"Рипстик", icon:""},
-				{name:"Парапланеризъм", icon:""},
-				{name:"Скачане с бънджи", icon:""},
-				{name:"Планинско колоездене", icon:""},
-				{name:"Рафтинг", icon:""},
-				{name:"Бейсджъмпинг", icon:""},
-				{name:"Кайтсърфинг", icon:""},
-				{name:"Спортно катерене", icon:""},
-				{name:"Парашутизъм", icon:""}
+				{name:"Рипстик", icon:"img/rimp.png"},
+				{name:"Парапланеризъм", icon:"img/para.jpg"},
+				{name:"Скачане с бънджи", icon:"img/bun.jpg"},
+				{name:"Планинско колоездене", icon:"img/bike.jpg"},
+				{name:"Рафтинг", icon:"img/raft.jpg"},
+				{name:"Бейсджъмпинг", icon:"img/base.jpg"},
+				{name:"Кайтсърфинг", icon:"img/kite.jpg"},
+				{name:"Спортно катерене", icon:"img/rock.jpg"},
+				{name:"Парашутизъм", icon:"img/hut.jpg"}
 			]
 
 			var Page = [
 				React.createClass({
 					render: function(){
-						return(
+						return(<div>
 						<h1>Sport</h1>
 							<div className="img_text">
 								<div className="images">
@@ -62,11 +62,12 @@
 	Може да включва определено време на свободно падане, през което парашутът не е разгърнат и падането на тялото постепенно се ускорява до скоростта на свободно падане.
 								</p>
 							</div>)
+							</div>)
 					}
 				}),
 				React.createClass({
 					render: function(){
-						return(
+						return(<div>
 						<h1>Sport</h1>
 							<div className="img_text">
 								<div className="images">
@@ -77,11 +78,12 @@
 	Може да включва определено време на свободно падане, през което парашутът не е разгърнат и падането на тялото постепенно се ускорява до скоростта на свободно падане.
 								</p>
 							</div>)
+							</div>)
 					}
 				}),
 				React.createClass({
 					render: function(){
-						return(
+						return(<div>
 						<h1>Sport</h1>
 							<div className="img_text">
 								<div className="images">
@@ -92,11 +94,12 @@
 	Може да включва определено време на свободно падане, през което парашутът не е разгърнат и падането на тялото постепенно се ускорява до скоростта на свободно падане.
 								</p>
 							</div>)
+							</div>)
 					}
 				}),
 				React.createClass({
 					render: function(){
-						return(
+						return(<div>
 						<h1>Sport</h1>
 							<div className="img_text">
 								<div className="images">
@@ -107,11 +110,12 @@
 	Може да включва определено време на свободно падане, през което парашутът не е разгърнат и падането на тялото постепенно се ускорява до скоростта на свободно падане.
 								</p>
 							</div>)
+							</div>)
 					}
 				}),
 				React.createClass({
 					render: function(){
-						return(
+						return(<div>
 						<h1>Sport</h1>
 							<div className="img_text">
 								<div className="images">
@@ -122,11 +126,12 @@
 	Може да включва определено време на свободно падане, през което парашутът не е разгърнат и падането на тялото постепенно се ускорява до скоростта на свободно падане.
 								</p>
 							</div>)
+							</div>)
 					}
 				}),
 				React.createClass({
 					render: function(){
-						return(
+						return(<div>
 						<h1>Sport</h1>
 							<div className="img_text">
 								<div className="images">
@@ -137,11 +142,12 @@
 	Може да включва определено време на свободно падане, през което парашутът не е разгърнат и падането на тялото постепенно се ускорява до скоростта на свободно падане.
 								</p>
 							</div>)
+							</div>)
 					}
 				}),
 				React.createClass({
 					render: function(){
-						return(
+						return(<div>
 						<h1>Sport</h1>
 							<div className="img_text">
 								<div className="images">
@@ -152,11 +158,13 @@
 	Може да включва определено време на свободно падане, през което парашутът не е разгърнат и падането на тялото постепенно се ускорява до скоростта на свободно падане.
 								</p>
 							</div>)
+							</div>)
 					}
 				}),
 				React.createClass({
 					render: function(){
-						return(
+						return(<div>
+
 						<h1>Sport</h1>
 							<div className="img_text">
 								<div className="images">
@@ -166,6 +174,7 @@
 								<p className="text">Парашутизмът, или скачане с парашут, е действието на излизане от самолет и връщането на земята с помощта на гравитация и парашут, който забавя скоростта на спускане в заключителната част.
 	Може да включва определено време на свободно падане, през което парашутът не е разгърнат и падането на тялото постепенно се ускорява до скоростта на свободно падане.
 								</p>
+							</div>)
 							</div>)
 					}
 				}),
@@ -210,6 +219,7 @@
 			var App = React.createClass({
 				getInitialState: function(){
 					return ({page: 0})
+
 				},
 
 				onClickMenu: function(index,event){
@@ -273,12 +283,14 @@
 			var SportItem = React.createClass({
 					render: function (){
 						return(
+
 							<span>	
 								<img src={this.props.icon} />						
 								<li  onClick={this.props.event.bind(this,this.props.index)} >{this.props.name}
 								</li>
 							</span>
 					
+
 						)
 					}
 			});
