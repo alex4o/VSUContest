@@ -5,13 +5,18 @@ https://docs.google.com/document/d/15mlhsizDCjFUrfYam_xLWbJ-3qsxkkVMkr1wluQ--fE/
 .upper_header h1{
 	text-align: center;
 	font-family: 'Rockwell Extra Bold', Impact;
-	color= blue;
+	color: navy;
 	font-size: 100px;
 }
 
 * {
 	padding: 0px;
 	margin: 0px;
+
+}
+
+body {
+    background-image: url("../img/Plate.jpg");
 }
 
 #content {
