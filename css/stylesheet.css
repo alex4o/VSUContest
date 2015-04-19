@@ -6,6 +6,7 @@ https://docs.google.com/document/d/15mlhsizDCjFUrfYam_xLWbJ-3qsxkkVMkr1wluQ--fE/
 	text-align: center;
 	font-family: 'Rockwell Extra Bold', Impact;
 	color= blue;
+	font-size: 100px;
 }
 
 * {
@@ -72,14 +73,22 @@ nav > ul > span > li {
 }
 
 #images img{
-	display: block;
-	height: 10%;
-	width: 10%;
+	 
+	height: 25%;
+	width: 50%;
 	margin:20px;
 }
 
 #text {
+	display: block;
 	flex:2;
+	text-align: justify;
+	font-size: 25px;
+	font-family: 
+}	
 
+#img_text {
+	  display: -webkit-flex;
+  display: flex;
 }
 
