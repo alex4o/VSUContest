@@ -8,7 +8,7 @@ https://docs.google.com/document/d/15mlhsizDCjFUrfYam_xLWbJ-3qsxkkVMkr1wluQ--fE/
 	color= blue;
 }
 
-.nav {
+nav {
 	position: relative;
 	text-align: left;
 	  
@@ -17,6 +17,37 @@ https://docs.google.com/document/d/15mlhsizDCjFUrfYam_xLWbJ-3qsxkkVMkr1wluQ--fE/
 	flex: 1;
 	-webkit-flex: 1;
 
+}
+
+.tab {
+	position: relative;	
+	flex: 1;
+	-webkit-flex: 1;
+	padding: 10px;
+	display: boxed;
+
+	height: 100px;
+	width: 100px;
+	min-width: 50px;
+	min-height: 50px;
+	border: 1px solid black;
+
+}
+
+.info_screen {
+	h1 {
+		text-align: left;
+
+	}
+	img {
+		
+		
+	}
+
+
+}
+
+.active_tab {
 
 
 }

@@ -10,7 +10,17 @@
 		<script type="text/jsx">
 
 			var Sports = [
-				{name:"winter", icon:""}
+				{name:"Сноуборд", icon:""},
+				{name:"Рипстик", icon:""},
+				{name:"Парапланеризъм", icon:""},
+				{name:"Скачане с бънджи", icon:""},
+				{name:"Планинско колоездене", icon:""},
+				{name:"Рафтинг", icon:""},
+				{name:"Бейсджъмпинг", icon:""},
+				{name:"Кайтсърфинг", icon:""},
+				{name:"Спортно катерене", icon:""},
+				{name:"Парашутизъм", icon:""}
+
 			]
 
 			var App = React.createClass({
@@ -39,15 +49,24 @@
 					});
 
 					return (
-						<div>
-							{SportItems}
-						</div>
+						<nav>
+							<ul>
+								{SportItems}
+							</ul>
+						</nav>
 					)
 				}
 			})
 
 			var InfoScreenPanel = React.createClass({
+				render:function(){
 
+					return(
+						<div>
+							
+						<div/>
+						)
+				}
 
 			})
 
@@ -55,9 +74,9 @@
 			var SportItem = React.createClass({
 					render: function (){
 						return(
-							<div>
-								
-							</div>
+							<li>
+								{this.props.name}
+							</li>
 						)
 					}
 			});
@@ -67,10 +86,6 @@
 	</head>
 	
 	<body>
-
-		<div class="nav">
-
-		</div>
 
 
 	</body>
