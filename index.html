@@ -11,7 +11,17 @@
 		<script type="text/jsx">
 
 			var Sports = [
-				{name:"winter", icon:""}
+				{name:"Сноуборд", icon:""},
+				{name:"Рипстик", icon:""},
+				{name:"Парапланеризъм", icon:""},
+				{name:"Скачане с бънджи", icon:""},
+				{name:"Планинско колоездене", icon:""},
+				{name:"Рафтинг", icon:""},
+				{name:"Бейсджъмпинг", icon:""},
+				{name:"Кайтсърфинг", icon:""},
+				{name:"Спортно катерене", icon:""},
+				{name:"Парашутизъм", icon:""}
+
 			]
 
 			var App = React.createClass({
@@ -19,10 +29,7 @@
 
 				render: function (){
 
-					var SportItems = this.props.sports.map(function(item,index){
 
-						return (<SportItem name={item.name} icon={item.icon} />)
-					})
 
 					return(
 						<div>
@@ -31,43 +38,50 @@
 								<h1>Екстремни спортове</h1>
 							</div>
 
-							<div id="content">
-								<nav>
-									<ul>
-										<li>Сноуборд</li>
-										<li>Рипстик</li>
-										<li>Парапланеризъм</li>
-										<li>Скачане с бънджи</li>
-										<li>Планинско колоездене</li>
-										<li>Рафтинг</li>
-										<li>Бейсджъмпинг</li>
-										<li>Кайтсърфинг</li>
-										<li>Спортно катерене</li>
-										<li>Парашутизъм</li>
-									</ul>
-								</nav>
-
-								<div id="info_screen">
-										<h1>Sport</h1>
-								</div>
-							</div>
-
-							
 
 
-							{SportItems}
+							<MenuPanel sports={this.props.sports} />
 
 						</div>
 					)
 				}
 			});
 
+			var MenuPanel = React.createClass({
+				render: function(){
+					var SportItems = this.props.sports.map(function(item,index){
+						return (<SportItem name={item.name} icon={item.icon} />)
+					});
+
+					return (
+						<nav>
+							<ul>
+								{SportItems}
+							</ul>
+						</nav>
+					)
+				}
+			})
+
+			var InfoScreenPanel = React.createClass({
+				render:function(){
+
+					return(
+						<div>
+							
+						<div/>
+						)
+				}
+
+			})
+
+
 			var SportItem = React.createClass({
 					render: function (){
 						return(
-							<div>
-								
-							</div>
+							<li>
+								{this.props.name}
+							</li>
 						)
 					}
 			});
