@@ -18,10 +18,7 @@
 
 				render: function (){
 
-					var SportItems = this.props.sports.map(function(item,index){
 
-						return (<SportItem name={item.name} icon={item.icon} />)
-					})
 
 					return(
 						<div>
@@ -29,11 +26,31 @@
 							<div className="upper_header">
 								<h1>Екстремни спортове</h1>
 							</div>
-							{SportItems}
+							<MenuPanel sports={this.props.sports} />
 						</div>
 					)
 				}
 			});
+
+			var MenuPanel = React.createClass({
+				render: function(){
+					var SportItems = this.props.sports.map(function(item,index){
+						return (<SportItem name={item.name} icon={item.icon} />)
+					});
+
+					return (
+						<div>
+							{SportItems}
+						</div>
+					)
+				}
+			})
+
+			var InfoScreenPanel = React.createClass({
+
+
+			})
+
 
 			var SportItem = React.createClass({
 					render: function (){
