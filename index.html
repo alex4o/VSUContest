@@ -138,7 +138,6 @@
 							
 								<MenuPanel event={this.onClickMenu} sports={this.props.sports} />
 								<InfoScreenPanel />
-							
 							</div>
 
 						</div>
@@ -150,14 +149,17 @@
 				render: function(){
 					var self = this
 					var SportItems = this.props.sports.map(function(item,index){
-						return (<SportItem event={self.props.event} key={index} index={index} name={item.name} icon={item.icon} />)
+						return (
+							<SportItem event={self.props.event} key={index} index={index} name={item.name} icon={item.icon} />)
 					});
 
 					return (
 						<nav>	
-							<ul>		
+							
+							<ReactCSSTransitionGroup component="ul" transitionName="example">		
 								{SportItems}
-							</ul>
+							</ReactCSSTransitionGroup>
+
 						</nav>
 					)
 				}
@@ -175,7 +177,8 @@
 								<img src="http://www.crackverbal.com/wp-content/uploads/2013/08/serial-test-take.jpg" />
 								</div>
 								<p id="text">Парашутизмът, или скачане с парашут, е действието на излизане от самолет и връщането на земята с помощта на гравитация и парашут, който забавя скоростта на спускане в заключителната част.
-	Може да включва определено време на свободно падане, през което парашутът не е разгърнат и падането на тялото постепенно се ускорява до скоростта на свободно падане.</p>
+	Може да включва определено време на свободно падане, през което парашутът не е разгърнат и падането на тялото постепенно се ускорява до скоростта на свободно падане.
+								</p>
 							</div>
 						</div>			
 						)
@@ -187,9 +190,9 @@
 			var SportItem = React.createClass({
 					render: function (){
 						return(
-							<ReactCSSTransitionGroup transitionName="example">
-								<li style={{backgroundImage: this.props.icon}}} onClick={this.props.event.bind(this,this.props.index)} >{this.props.name}</li>
-							</ReactCSSTransitionGroup>
+							
+								<li style={{backgroundImage: "url("+this.props.icon+")"}} onClick={this.props.event.bind(this,this.props.index)} >{this.props.name}</li>
+							
 						)
 					}
 			});
