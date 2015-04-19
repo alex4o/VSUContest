@@ -1,16 +1,31 @@
 <html>
 	<head>
 		<title>Екстремни спортове</title>
+
+		<link rel="stylesheet" href="css/stylesheet.css" type= "type/css">
+		<meta charset="UTF-8">
 		<script src="http://fb.me/react-0.13.2.js"></script>
 		<script src="http://fb.me/JSXTransformer-0.13.2.js"></script>
+
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<script type="text/jsx">
 			var App = React.createClass({
-	
+		
+			var Sports = {
+				
+				
+			}
+
 			render: function(){
+				var SportItems = this.props.Sports.map(function(item,index){
+
+				})
+
 				return(
 						<div>
 							
+
+
 						</div>
 						)
 
@@ -32,6 +47,9 @@
 	</head>
 	<body>
 
+	<div class="upper_header">
+		<h1>Екстремни спортове</h1>
+	</div>
 
 	</body>
 </html>
