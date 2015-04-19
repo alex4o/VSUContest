@@ -3,13 +3,17 @@
 	<head>
 		<title>Екстремни спортове</title>
 
-		<link rel="stylesheet" href="css/stylesheet.css" type= "type/css">
+		<link rel="stylesheet" href="css/stylesheet.css" type= "type/css" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.6/animate.css" />
 		<meta charset="UTF-8">
 		<script src="http://fb.me/react-0.13.2.js"></script>
 		<script src="http://fb.me/JSXTransformer-0.13.2.js"></script>
+		<script src="http://fb.me/react-with-addons-0.13.2.js"></script>
+
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<script type="text/jsx">
-
+			var ReactCSSTransitionGroup = React.addons.CSSTransitionGroup;
+			
 			var Sports = [
 				{name:"Сноуборд", icon:""},
 				{name:"Рипстик", icon:""},
@@ -23,9 +27,92 @@
 				{name:"Парашутизъм", icon:""}
 			]
 
+			var Page = [
+				React.createClass({
+					render: function(){
+						return(
+						<div>
+
+						</div>)
+					}
+				}),
+				React.createClass({
+					render: function(){
+						return(
+						<div>
+
+						</div>)
+					}
+				}),
+				React.createClass({
+					render: function(){
+						return(
+						<div>
+
+						</div>)
+					}
+				}),
+				React.createClass({
+					render: function(){
+						return(
+						<div>
+
+						</div>)
+					}
+				}),
+				React.createClass({
+					render: function(){
+						return(
+						<div>
+
+						</div>)
+					}
+				}),
+				React.createClass({
+					render: function(){
+						return(
+						<div>
+
+						</div>)
+					}
+				}),
+				React.createClass({
+					render: function(){
+						return(
+						<div>
+
+						</div>)
+					}
+				}),
+				React.createClass({
+					render: function(){
+						return(
+						<div>
+
+						</div>)
+					}
+				}),
+				React.createClass({
+					render: function(){
+						return(
+						<div>
+
+						</div>)
+					}
+				}),
+				React.createClass({
+					render: function(){
+						return(
+						<div>
+
+						</div>)
+					}
+				}),
+			]
+
 			var App = React.createClass({
-				onClickMenu: function(event,index){
-					console.log(index)
+				onClickMenu: function(index,event){
+					console.log(arguments)
 					alert("clicked on :"+index)
 				},
 
@@ -35,9 +122,12 @@
 							<div className="upper_header">
 								<h1>Екстремни спортове</h1>
 							</div>
+
 							<div id="content">
-							<MenuPanel event={this.onClickMenu} sports={this.props.sports} />
-							<InfoScreenPanel />
+							
+								<MenuPanel event={this.onClickMenu} sports={this.props.sports} />
+								<InfoScreenPanel />
+							
 							</div>
 						</div>
 					)
@@ -48,14 +138,14 @@
 				render: function(){
 					var self = this
 					var SportItems = this.props.sports.map(function(item,index){
-						return (<SportItem event={self.props.event} index={index} name={item.name} icon={item.icon} />)
+						return (<SportItem event={self.props.event} key={index} index={index} name={item.name} icon={item.icon} />)
 					});
 
 					return (
-						<nav>
-							<ul>
+						<nav>			
+							<ReactCSSTransitionGroup component="ul" transitionName="bounceOutLeft">
 								{SportItems}
-							</ul>
+							</ReactCSSTransitionGroup>
 						</nav>
 					)
 				}
@@ -77,7 +167,7 @@
 			var SportItem = React.createClass({
 					render: function (){
 						return(
-							<li onClick={this.props.event.bind(this.props.index)}>
+							<li onClick={this.props.event.bind(this,this.props.index)}>
 								{this.props.name}
 							</li>
 						)
