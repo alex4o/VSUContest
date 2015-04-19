@@ -14,12 +14,22 @@
 		<style>
 			.example-enter {
 				opacity: 0.01;
-				transition: opacity .5s ease-in;
+				transition: opacity 2s ease-in;
 			}
 
 			.example-enter.example-enter-active {
 				opacity: 1;
 			}
+
+			.example-leave {
+				opacity: 1;
+				transition: opacity 2s ease-in;
+			}
+
+			.example-leave.example-leave-active {
+				opacity: 0.01;
+			}
+
 		</style>
 
 		<script type="text/jsx">
@@ -42,92 +52,189 @@
 				React.createClass({
 					render: function(){
 						return(
-						<div>
+							<div>
+						<h1>Сноуборд</h1>
+							<div className="img_text">
+								<div className="images">
+								<img src="data:image/jpeg;base64,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" />
+								</div>
+								<p className="text">Сноуборд (на английски snowboard, в буквален превод снежна дъска) представлява плоска конструкция, предназначена за спускане по снежни наклони в планината. Разглежда се като зимния еквивалент на скейтборда. 
+Сноубордът има дървена основа, а отгоре и отдолу слоеве от стъклопласт. Върху дъската има закрепвания за краката. Дължината му варира от 140 до 165 см, а ширината му от 24 до 27 см.
+В сноуборда има няколко стила - свободно каране, фриистайл, бордъркрос и спускания в "алпийски стил" (които стават пред много публика и имат оценяване от жури).
+								</p>
+								</div>
+							</div>)
+					}
+				}),
+				React.createClass({
+					render: function(){
+						return(
+							<div>
+						<h1>Рипстик</h1>
+							<div className="img_text">
+								<div className="images">
+								<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTwfVYCEMaBj53njw50V_I8nNoET20lCCaArHJGMySkTuGJtz86g" />
+								</div>
+								<p className="text">Рипстик (на английски Ripstik) е най-новият скейтборд, който съчетава в себе си също така елементи на сноуборд и сърфборд. Той наподобява Дъ Уейв (The Wave), друг скейтборд, патентован през 2004 година. Рипстик е патентован през 2007 година и има по-дълга тръба в средата, но по-малка платформа. Колелата му са направени от полиуретан с диаметър 78мм.
+Рипстик има само две колела за разлика от скейтборда и всяко от тях може да се върти независимо от другото, не трябва да се слиза от него, за да му се предаде ускорение, състои се от две малки платформи вместо една цяла и е много гъвкав - може да се извива с движение на крака нагоре-надолу. Може да прави резки завои.
 
-						</div>)
+								</p>
+								</div>
+							</div>)
+					}
+				}),
+				React.createClass({
+					render: function(){
+						return(
+							<div>
+						<h1>Парапланеризъм</h1>
+							<div className="img_text">
+								<div className="images">
+								<img src="data:image/jpeg;base64,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" />
+								</div>
+								<p className="text">Парапланеризмът е форма на безмоторно летене и използва същите принципи на летене, както безмоторните самолети и делтапланерите. Двигател тук е гравитацията, която кара всички те да снижават (по-малко от 1,5 м/с) през въздуха, но също и да летят напред (с повече от 60 км/ч). В спокоен въздух, за 1000 метра снижение се прелитат около 9 километра.
+
+								</p>
+								</div>
+							</div>)
+					}
+				}),
+				React.createClass({
+					render: function(){
+						return(
+							<div>
+						<h1>Скачане с бънджи</h1>
+							<div className="img_text">
+								<div className="images">
+								<img src="data:image/jpeg;base64,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" />
+								</div>
+								<p className="text">Бънджи скоковете водят началото си от остров Пентекост в Тихия океан. За родина на съвременните бънджи скокове се приема Нова Зеландия, където в края на 80те години започва практикуването на скокове с ластично въже. Бънджи скоковете дължат своята известност на новозеландеца А.Дж. Хакет, който извършва легендарен скок от Айфеловата кула в Париж. Скокът от Айфеловата кула е предаван по всички световни телевизионни канали.
+След това паметно събитие бънджи скоковете започват да се развиват във Франция, разпространяват се из цяла Европа и добиват популярност по целия свят. През 1992 година започват да се провеждат първите бънджи скокове в България. На 10 април 1992 година Росен Касабов провежда два изпитателни скока от Аспаруховия мост във Варна.
+
+								</p>
+								</div>
+							</div>)
+					}
+				}),
+				React.createClass({
+					render: function(){
+						return(
+							<div>
+						<h1>Планинско колоездене</h1>
+							<div className="img_text">
+								<div className="images">
+								<img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcR2xgf8434JhouFCs05EMNhj15WZ6bhs14O2OXWutypYlT4lwHE8Q" />
+								</div>
+								<p className="text">Планинското колоездене набира все повече почитатели, предвид натоварения трафик и лошите условия за каране на велосипед в градска среда. Това е една чудесна възможност да поспортуваш на чист въздух и да си вдигнеш адреналина на макс. 
+Планинското колоездене започва същественото си развитие в средата на 70-те години на XX-ти век. Тогава няколко запалени по велосипедите момчета от Калифорния, превърнали своето хоби в професия. И с няколко подобрения постигнали много повече – тяхното колело с дебели гуми предизвикало световен бум.
+През 1976 г. Чарлз Кели и Гари Фишър (състезатели по колоездене), заедно с Джон Брийз и Том Ричи от групата Clunkers започнали да организират състезания по 5-километровото трасе на Cascade Fire Trail близо до Феърфакс. Скоро колоездачи от целия град се присъединили към това забавление и възприели мотото на Hell’s Angels – “Карай, за да живееш и живей, за да караш.”. Терминът “планински велосипед” („mountain bike“) е използван за първи път през януари 1980 г. в списание Bicycle Motocross Action.
+
+								</p>
+								</div>
+							</div>)
+					}
+				}),
+				React.createClass({
+					render: function(){
+						return(
+							<div>
+						<h1>Рафтинг</h1>
+							<div className="img_text">
+								<div className="images">
+								<img src="https://www.google.bg/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&cad=rja&uact=8&ved=0CAcQjRw&url=http%3A%2F%2Fwww.outdooroetztal.com%2Fen%2Factivities%2Frafting%2F&ei=CYAzVZfeGIHSaMzfgPgB&bvm=bv.91071109,d.d2s&psig=AFQjCNEl89L0URsah-V-qJW-Uo6nai7tGw&ust=1429524870318088" />
+								<img src="https://www.google.bg/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&cad=rja&uact=8&ved=0CAcQjRw&url=http%3A%2F%2Fwww.outdoorjapan.com%2Ftravel%2Foperator_details%2F86&ei=EYAzVf7DOoutadL8gZgL&bvm=bv.91071109,d.d2s&psig=AFQjCNEl89L0URsah-V-qJW-Uo6nai7tGw&ust=1429524870318088" />
+								</div>
+								<p className="text">Думата рафтинг произлиза от английската дума raft /сал/. Рафтингът е екстремен спорт, който всъщност представлява спускане с гумени лодки /рафтове/ по речни бързеи. Най-добрият сезон за рафтинг е пролетта, когато реките прииждат от снеготопенето и са най-пълноводни и буйни.
+
+								</p>
+								</div>
+							</div>)
+					}
+				}),
+				React.createClass({
+					render: function(){
+						return(
+							<div>
+						<h1>Бейсджъмпинг</h1>
+							<div className="img_text">
+								<div className="images">
+								<img src="http://www.crackverbal.com/wp-content/uploads/2013/08/serial-test-take.jpg" />
+								<img src="http://www.crackverbal.com/wp-content/uploads/2013/08/serial-test-take.jpg" />
+								</div>
+								<p className="text">БЕЙС ДЖЪМПИНГ представляват скокове с парашут от земна цел, и от там самото наименование. Името му произлиза от английската абревиaтура B.A.S.E. – Building (сгради),Antenna (кули и други подобни съоръжения), Span (обособено кратко разстояние, примерно мост) и earth (земя, скали). 
+Бейс джъмпингът се определя като един от най-екстремните и опасни за практикуване спортове. Първият бейсджъмпинг в България се провежда от Росен Касабов (клуб Адреналин), който през 1992г. го изпълнява от "Аспарухов-мост" - Варна. Може би най-известният бейсджъмпър в момента е момчето, което покори стратосферата – Феликс Баумгартнер. 
+
+								</p>
+								</div>
+							</div>)
+					}
+				}),
+				React.createClass({
+					render: function(){
+						return(
+							<div>
+						<h1>Кайтсърфинг</h1>
+							<div className="img_text">
+								<div className="images">
+								<img src="http://www.crackverbal.com/wp-content/uploads/2013/08/serial-test-take.jpg" />
+								<img src="http://www.crackverbal.com/wp-content/uploads/2013/08/serial-test-take.jpg" />
+								</div>
+								<p className="text">Кайтсърфинг или кайтбординг е екстремен воден спорт, който се практикува с кайт сърф или кайт борд. Използва дъска с или без автомати, комбинирана със силата на голямо управляемо хвърчило (крило), което се тегли през водата.
+
+								</p>
+								</div>
+							</div>)
 					}
 				}),
 				React.createClass({
 					render: function(){
 						return(
 						<div>
+						<h1>Спортно катерене</h1>
+							<div className="img_text">
+								<div className="images">
+								<img src="http://www.crackverbal.com/wp-content/uploads/2013/08/serial-test-take.jpg" />
+								<img src="http://www.crackverbal.com/wp-content/uploads/2013/08/serial-test-take.jpg" />
+								</div>
+								<p className="text">Спортното катерене е разклонение от катеренето, където елементът на опасност е сведен до минимум от поставените по скалата осигурителни точки. Тези точки известни сред катерачните среди като "болтове" биват два вида и се поставят в предварително пробити в скалата дупки. При единият вид за закрепването се използва специално лепило, а при другият вид болтът има свойството да се разширява отвътре и така да създава определно съпротивление върху скалата. 
+Тъй като при това катерене опасността е сведена до минимум, физическата трудност може да бъде екстремно висока, много по-висока от колкото е приемливо при катеренето в традиционен стил. Паданията са относително безопасни и се приемат като нещо напълно нормално, което е неразделна част от изкачването. 
 
+								</p>
+							</div>
 						</div>)
 					}
 				}),
 				React.createClass({
 					render: function(){
 						return(
+					
 						<div>
-
-						</div>)
-					}
-				}),
-				React.createClass({
-					render: function(){
-						return(
-						<div>
-
-						</div>)
-					}
-				}),
-				React.createClass({
-					render: function(){
-						return(
-						<div>
-
-						</div>)
-					}
-				}),
-				React.createClass({
-					render: function(){
-						return(
-						<div>
-
-						</div>)
-					}
-				}),
-				React.createClass({
-					render: function(){
-						return(
-						<div>
-
-						</div>)
-					}
-				}),
-				React.createClass({
-					render: function(){
-						return(
-						<div>
-
-						</div>)
-					}
-				}),
-				React.createClass({
-					render: function(){
-						return(
-						<div>
-
-						</div>)
-					}
-				}),
-				React.createClass({
-					render: function(){
-						return(
-						<div>
-
-						</div>)
+						<h1>Парашутизъм</h1>
+							<div className="img_text">
+								<div className="images">
+								<img src="http://www.crackverbal.com/wp-content/uploads/2013/08/serial-test-take.jpg" />
+								<img src="http://www.crackverbal.com/wp-content/uploads/2013/08/serial-test-take.jpg" />
+								</div>
+								<p className="text">Парашутизмът, или скачане с парашут, е действието на излизане от самолет и връщането на земята с помощта на гравитация и парашут, който забавя скоростта на спускане в заключителната част.
+	Може да включва определено време на свободно падане, през което парашутът не е разгърнат и падането на тялото постепенно се ускорява до скоростта на свободно падане.
+								</p>
+							</div>
+						</div>
+						)
 					}
 				}),
 			]
 
 			var App = React.createClass({
 				getInitialState: function(){
-					return ({page : 0})
+
+					return ({page: 0})
+
 				},
 
 				onClickMenu: function(index,event){
-					this.setState({page:index})
+					this.setState({page: index})
+					console.log(index)
 				},
 
 				render: function (){
@@ -140,7 +247,7 @@
 							<div id="content">
 							
 								<MenuPanel event={this.onClickMenu} sports={this.props.sports} />
-								<InfoScreenPanel panel={this.state.panel}/>
+								<InfoScreenPanel panel={this.state.page}/>
 							</div>
 
 						</div>
@@ -173,16 +280,9 @@
 					return(
 						
 						<div id="info_screen">
-							<h1>Sport</h1>
-							<div id="img_text">
-								<div id="images">
-								<img src="http://www.crackverbal.com/wp-content/uploads/2013/08/serial-test-take.jpg" />
-								<img src="http://www.crackverbal.com/wp-content/uploads/2013/08/serial-test-take.jpg" />
-								</div>
-								<p id="text">Парашутизмът, или скачане с парашут, е действието на излизане от самолет и връщането на земята с помощта на гравитация и парашут, който забавя скоростта на спускане в заключителната част.
-	Може да включва определено време на свободно падане, през което парашутът не е разгърнат и падането на тялото постепенно се ускорява до скоростта на свободно падане.
-								</p>
-							</div>
+						
+							{React.createElement(Page[this.props.panel])}
+						
 						</div>			
 						)
 				}
