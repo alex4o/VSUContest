@@ -8,13 +8,11 @@
 		<script src="http://fb.me/JSXTransformer-0.13.2.js"></script>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<script type="text/jsx">
-			var App = React.createClass({
-		
 			var Sports = [
 				{name:"winter", icon:""}
-				
 			]
 
+			var App = React.createClass({
 			render: function(){
 				var SportItems = this.props.Sports.map(function(item,index){
 					return (<SportItem name={item.name} icon={item.icon}>)
@@ -43,7 +41,7 @@
 					}
 			});
 
-			React.render(<App/>,document.body);
+			React.render(<App sports={Sports}/>,document.body);
 		</script>
 	</head>
 	
