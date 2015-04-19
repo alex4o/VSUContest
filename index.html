@@ -21,26 +21,24 @@
 				{name:"Кайтсърфинг", icon:""},
 				{name:"Спортно катерене", icon:""},
 				{name:"Парашутизъм", icon:""}
-
 			]
 
 			var App = React.createClass({
-
+				onClickMenu: function(event,index){
+					console.log(index)
+					alert("clicked on :"+index)
+				},
 
 				render: function (){
-
-
-
 					return(
 						<div>
-
 							<div className="upper_header">
 								<h1>Екстремни спортове</h1>
 							</div>
-
-
-
-							<MenuPanel sports={this.props.sports} />
+							<div id="content">
+							<MenuPanel event={this.onClickMenu} sports={this.props.sports} />
+							<InfoScreenPanel />
+							</div>
 
 						</div>
 					)
@@ -49,8 +47,9 @@
 
 			var MenuPanel = React.createClass({
 				render: function(){
+					var self = this
 					var SportItems = this.props.sports.map(function(item,index){
-						return (<SportItem name={item.name} icon={item.icon} />)
+						return (<SportItem event={self.props.event} index={index} name={item.name} icon={item.icon} />)
 					});
 
 					return (
@@ -65,11 +64,18 @@
 
 			var InfoScreenPanel = React.createClass({
 				render:function(){
-
 					return(
-						<div>
-							
-						<div/>
+						
+						<div id="info_screen">
+							<h1>Sport</h1>
+
+							<div id="images">
+							<img src="http://www.crackverbal.com/wp-content/uploads/2013/08/serial-test-take.jpg" />
+							<img src="http://www.crackverbal.com/wp-content/uploads/2013/08/serial-test-take.jpg" />
+							</div>
+							<p id="text">Парашутизмът, или скачане с парашут, е действието на излизане от самолет и връщането на земята с помощта на гравитация и парашут, който забавя скоростта на спускане в заключителната част.
+Може да включва определено време на свободно падане, през което парашутът не е разгърнат и падането на тялото постепенно се ускорява до скоростта на свободно падане.</p>
+						</div>			
 						)
 				}
 
@@ -79,7 +85,7 @@
 			var SportItem = React.createClass({
 					render: function (){
 						return(
-							<li>
+							<li onClick={this.props.event.bind(this.props.index)}>
 								{this.props.name}
 							</li>
 						)
