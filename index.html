@@ -28,14 +28,14 @@
 			var Sports = [
 				{name:"Сноуборд", icon:"img/snow2.jpg"},
 				{name:"Рипстик", icon:"img/rimp.png"},
-				{name:"Парапланеризъм", icon:""},
-				{name:"Скачане с бънджи", icon:""},
-				{name:"Планинско колоездене", icon:""},
-				{name:"Рафтинг", icon:""},
-				{name:"Бейсджъмпинг", icon:""},
-				{name:"Кайтсърфинг", icon:""},
-				{name:"Спортно катерене", icon:""},
-				{name:"Парашутизъм", icon:""}
+				{name:"Парапланеризъм", icon:"img/para.jpg"},
+				{name:"Скачане с бънджи", icon:"img/bun.jpg"},
+				{name:"Планинско колоездене", icon:"img/bike.jpg"},
+				{name:"Рафтинг", icon:"img/raft.jpg"},
+				{name:"Бейсджъмпинг", icon:"img/base.jpg"},
+				{name:"Кайтсърфинг", icon:"img/kite.jpg"},
+				{name:"Спортно катерене", icon:"img/rock.jpg"},
+				{name:"Парашутизъм", icon:"img/hut.jpg"}
 			]
 
 			var Page = [
@@ -122,9 +122,12 @@
 			]
 
 			var App = React.createClass({
+				getInitialState: function(){
+					return ({page : 0})
+				},
+
 				onClickMenu: function(index,event){
-					console.log(arguments)
-					alert("clicked on :"+index)
+					this.setState({page:index})
 				},
 
 				render: function (){
@@ -137,7 +140,7 @@
 							<div id="content">
 							
 								<MenuPanel event={this.onClickMenu} sports={this.props.sports} />
-								<InfoScreenPanel />
+								<InfoScreenPanel panel={this.state.panel}/>
 							</div>
 
 						</div>
@@ -156,9 +159,9 @@
 					return (
 						<nav>	
 							
-							<ReactCSSTransitionGroup component="ul" transitionName="example">		
+							<ul>		
 								{SportItems}
-							</ReactCSSTransitionGroup>
+							</ul>
 
 						</nav>
 					)
@@ -190,9 +193,13 @@
 			var SportItem = React.createClass({
 					render: function (){
 						return(
-							
-								<li style={{backgroundImage: "url("+this.props.icon+")"}} onClick={this.props.event.bind(this,this.props.index)} >{this.props.name}</li>
-							
+
+							<span>	
+								<img src={this.props.icon} />						
+								<li  onClick={this.props.event.bind(this,this.props.index)} >{this.props.name}
+								</li>
+							</span>
+					
 
 						)
 					}
