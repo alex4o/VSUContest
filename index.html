@@ -6,11 +6,42 @@
 		<meta charset="UTF-8">
 		<script src="http://fb.me/react-0.13.2.js"></script>
 		<script src="http://fb.me/JSXTransformer-0.13.2.js"></script>
-	</head>	<body>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<script type="text/jsx">
+			var App = React.createClass({
+	
+			render: function(){
+				return(
+						<div>
+							<div className="upper_header">
+								<h1>Екстремни спортове</h1>
+							</div>
+						</div>
+						)
 
-	<div class="upper_header">
-		<h1>Екстремни спортове</h1>
-	</div>
+				}
+			});
+
+			var SportItem = React.createClass({
+					render: function(){
+						return(
+							<div>
+								
+							</div>
+						)
+					}
+			});
+
+			React.render(<App/>,document.body);
+		</script>
+	</head>
+	
+	<body>
+		<div class="nav">
+
+		</div>
+
+
 
 	</body>
 </html>
