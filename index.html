@@ -8,6 +8,7 @@
 		<script src="http://fb.me/JSXTransformer-0.13.2.js"></script>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<script type="text/jsx">
+
 			var Sports = [
 				{name:"winter", icon:""}
 			]
@@ -16,7 +17,7 @@
 			render: function(){
 				var SportItems = this.props.Sports.map(function(item,index){
 					return (<SportItem name={item.name} icon={item.icon}>)
-				})
+				});
 
 				return(
 						<div>
