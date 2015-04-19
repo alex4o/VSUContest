@@ -11,6 +11,17 @@
 		<script src="http://fb.me/react-with-addons-0.13.2.js"></script>
 
 		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<style>
+			.example-enter {
+				opacity: 0.01;
+				transition: opacity .5s ease-in;
+			}
+
+			.example-enter.example-enter-active {
+				opacity: 1;
+			}
+		</style>
+
 		<script type="text/jsx">
 			var ReactCSSTransitionGroup = React.addons.CSSTransitionGroup;
 			
@@ -143,10 +154,10 @@
 					});
 
 					return (
-						<nav>			
-							<ReactCSSTransitionGroup component="ul" transitionName="bounceOutLeft">
+						<nav>	
+							<ul>		
 								{SportItems}
-							</ReactCSSTransitionGroup>
+							</ul>
 						</nav>
 					)
 				}
@@ -176,9 +187,9 @@
 			var SportItem = React.createClass({
 					render: function (){
 						return(
-							<li onClick={this.props.event.bind(this,this.props.index)}>
-								{this.props.name}
-							</li>
+							<ReactCSSTransitionGroup transitionName="example">
+								<li style={{backgroundImage: this.props.icon}}} onClick={this.props.event.bind(this,this.props.index)} >{this.props.name}</li>
+							</ReactCSSTransitionGroup>
 						)
 					}
 			});
