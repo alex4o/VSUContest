@@ -1,3 +1,4 @@
+
 <html>
 	<head>
 		<title>Екстремни спортове</title>
@@ -14,12 +15,14 @@
 			]
 
 			var App = React.createClass({
-				render: function(){
 
-					var SportItems = this.props.sports.map(function(item,index)
-					{
-						return (<SportItem name={item.name} icon={item.icon}>)
-					});
+
+				render: function (){
+
+					var SportItems = this.props.sports.map(function(item,index){
+
+						return (<SportItem name={item.name} icon={item.icon} />)
+					})
 
 					return(
 						<div>
@@ -28,23 +31,31 @@
 								<h1>Екстремни спортове</h1>
 							</div>
 
-							<nav>
-								<ul>
-									<li>Сноуборд</li>
-									<li>Рипстик</li>
-									<li>Парапланеризъм</li>
-									<li>Скачане с бънджи</li>
-									<li>Планинско колоездене</li>
-									<li>Рафтинг</li>
-									<li>Бейсджъмпинг</li>
-									<li>Кайтсърфинг</li>
-									<li>Спортно катерене</li>
-									<li>Парашутизъм</li>
-								</ul>
-							</nav>
+							<div id="content">
+								<nav>
+									<ul>
+										<li>Сноуборд</li>
+										<li>Рипстик</li>
+										<li>Парапланеризъм</li>
+										<li>Скачане с бънджи</li>
+										<li>Планинско колоездене</li>
+										<li>Рафтинг</li>
+										<li>Бейсджъмпинг</li>
+										<li>Кайтсърфинг</li>
+										<li>Спортно катерене</li>
+										<li>Парашутизъм</li>
+									</ul>
+								</nav>
+
+								<div id="info_screen">
+										<h1>Sport</h1>
+								</div>
+							</div>
+
+							
 
 
-							<SportItems />
+							{SportItems}
 
 						</div>
 					)
@@ -52,7 +63,7 @@
 			});
 
 			var SportItem = React.createClass({
-					render: function(){
+					render: function (){
 						return(
 							<div>
 								
