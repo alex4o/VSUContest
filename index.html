@@ -6,26 +6,27 @@
 		<meta charset="UTF-8">
 		<script src="http://fb.me/react-0.13.2.js"></script>
 		<script src="http://fb.me/JSXTransformer-0.13.2.js"></script>
-
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<script type="text/jsx">
 			var App = React.createClass({
 		
-			var Sports = {
+			var Sports = [
+				{name:"winter", icon:""}
 				
-				
-			}
+			]
 
 			render: function(){
 				var SportItems = this.props.Sports.map(function(item,index){
-
+					return (<SportItem name={item.name} icon={item.icon}>)
 				})
 
 				return(
 						<div>
-							
 
-
+							<div className="upper_header">
+								<h1>Екстремни спортове</h1>
+							</div>
+							<SportItems />
 						</div>
 						)
 
@@ -45,11 +46,13 @@
 			React.render(<App/>,document.body);
 		</script>
 	</head>
+	
 	<body>
 
-	<div class="upper_header">
-		<h1>Екстремни спортове</h1>
-	</div>
+		<div class="nav">
+
+		</div>
+
 
 	</body>
 </html>

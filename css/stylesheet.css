@@ -1,9 +1,21 @@
-/* boo hoo*/ 
+/* boo hoo*
+
+https://docs.google.com/document/d/15mlhsizDCjFUrfYam_xLWbJ-3qsxkkVMkr1wluQ--fE/edit
+*/ 
 .upper_header h1{
 	text-align: center;
 	font-family: 'Rockwell Extra Bold', Impact;
 	color= blue;
-	
+}
+
+.nav {
+	position: relative;
+	text-align: left;
+	  
+	display: -webkit-flex;
+	display: flex;
+	flex: 1;
+	-webkit-flex: 1;
 
 
 
