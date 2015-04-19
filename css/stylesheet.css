@@ -17,6 +17,31 @@ https://docs.google.com/document/d/15mlhsizDCjFUrfYam_xLWbJ-3qsxkkVMkr1wluQ--fE/
 	flex: 1;
 	-webkit-flex: 1;
 
+}
 
+.tab {
+	position: relative;	
+	flex: 1;
+	-webkit-flex: 1;
+	padding: 10px;
+	display: boxed;
+
+	height: 100px;
+	width: 100px;
+	min-width: 50px;
+	min-height: 50px;
+
+}
+
+.info_screen {
+	h1 {
+
+	}
+	
+
+}
+
+.active_tab {
+	
 
 }
