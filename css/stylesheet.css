@@ -42,10 +42,18 @@ nav > ul > span > li {
 	text-align: center;
 	line-height: 50px;
 
-	background: gray;
+	background: #000000;;
 	color: white;
+	font-style: bold;
+	font-size: 20px;
+	font-family: sans-serif;
 
 	border: 1px solid black;
+	}
+
+	nav > ul > span > li:hover {
+		
+		background-color: rgba(0,0,0,0.5); 
 	}
 
 #info_screen {
