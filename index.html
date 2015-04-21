@@ -12,28 +12,27 @@
 
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<style>
-			.example-enter {
-				opacity: 0.01;
-				transition: opacity 2s ease-in;
-			}
+.example-enter {
+  opacity: 0.01;
+  transition: opacity .5s ease-in;
+}
 
-			.example-enter.example-enter-active {
-				opacity: 1;
-			}
+.example-enter.example-enter-active {
+  opacity: 1;
+}
 
-			.example-leave {
-				opacity: 1;
-				transition: opacity 2s ease-in;
-			}
+.example-leave {
+  opacity: 1;
+  transition: opacity .5s ease-in;
+}
 
-			.example-leave.example-leave-active {
-				opacity: 0.01;
-			}
-
+.example-leave.example-leave-active {
+  opacity: 0.01;
+}
 		</style>
 
 		<script type="text/jsx">
-			var ReactCSSTransitionGroup = React.addons.CSSTransitionGroup;
+			var ReactTransitionGroup = React.addons.CSSTransitionGroup;
 			
 			var Sports = [
 				{name:"Сноуборд", icon:"img/snow2.jpg"},
@@ -280,9 +279,9 @@
 					return(
 						
 						<div id="info_screen">
-						
-							{React.createElement(Page[this.props.panel])}
-						
+							<ReactTransitionGroup transitionName="example">
+								{React.createElement(Page[this.props.panel],{key:this.props.panel})}
+							</ReactTransitionGroup>
 						</div>			
 						)
 				}
